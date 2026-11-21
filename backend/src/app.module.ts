@@ -3,6 +3,9 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AppController } from './app.controller.js';
 import { AppService } from './app.service.js';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Producto } from './catalogo/productosE.js';
+import { Categoria } from './catalogo/categoriaE.js';
+import { CatalogoModule } from './catalogo/catalogo.module.js';
 
 //Cafeteria_Pweb
 @Module({
@@ -28,6 +31,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
       }),
 
+      CatalogoModule,
+      
   ],
   controllers: [AppController],
   providers: [AppService],
