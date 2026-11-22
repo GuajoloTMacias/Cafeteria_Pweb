@@ -5,3 +5,9 @@ De mientras lo que llevo es parte del catálogo por eso no subo aun la base,pero
 Productos: +id +nombre_producto +categoria_id +descripcion +disponibilidad +precio 
 Categoría: +id +nombre_categoria 
 Así de mientras pq obvio la ando modificando bien y si les pide instalar dependencias (que es probable) nadamas instálenlas en el proyecto y ya
+
+Nuevo commit: 
+de mometo solo pude meter el catálogo funcional y primera vista ya en React donde asi en grandes rasgos va:
++Entidades, servicios y controladores del catálogo (categorías y productos) conectados a PostgreSQL (cafeteria_db) y ya probados en Postman
++Vista inicial en react (frontend) consumiendo /categorias y /productos desde el backend
++Ajustes necesarios para la comunicación entre frontend y backend
