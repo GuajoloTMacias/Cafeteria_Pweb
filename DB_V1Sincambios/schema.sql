@@ -2,8 +2,6 @@
 -- PostgreSQL database dump
 --
 
-\restrict szX9C2CxgXIY6bKATbHvwxINd4zCKBOaMwuTParArdDTqLNlBgrt8YFFCsdzEui
-
 -- Dumped from database version 19.0
 -- Dumped by pg_dump version 19.0
 
@@ -297,78 +295,20 @@ ALTER TABLE ONLY public."Productos" ALTER COLUMN id SET DEFAULT nextval('public.
 -- Data for Name: Categoria; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public."Categoria" (id, nombre_categoria) FROM stdin;
-4	bebidas
-5	Alimentos
-6	Postres
-7	Extras
-\.
-
-
---
--- Data for Name: Estatus; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public."Estatus" (id, pedido_id, estado, usuario_id, fecha_cambio, notas) FROM stdin;
-\.
-
-
---
--- Data for Name: Items_pedido; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public."Items_pedido" (id, pedido_id, producto_id, cantidad, precio_unitario, subtotal) FROM stdin;
-\.
-
-
---
--- Data for Name: Notificaciones; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public."Notificaciones" (id, usuario_id, pedido_id, titulo, mensaje) FROM stdin;
-\.
-
-
---
--- Data for Name: Pagos; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public."Pagos" (id, pedido_id, cajero_id, metodo_pago, monto, estado_pago, fecha_pago) FROM stdin;
-\.
-
-
---
--- Data for Name: Pedidos; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public."Pedidos" (id, usuario_id, estado, subtotal, descuento, total, notas, "F_creacion", "F_actualizacion") FROM stdin;
-\.
+INSERT INTO public."Categoria" (id, nombre_categoria) VALUES
+(4, 'bebidas'),
+(5, 'Alimentos'),
+(6, 'Postres'),
+(7, 'Extras');
 
 
 --
 -- Data for Name: Productos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public."Productos" (descripcion, disponibilidad, precio, id, categoria_id, nombre_producto) FROM stdin;
-un taco	f	10.00	9	\N	taco dorado
-un atole de fresa	t	15.00	10	\N	atole
-\.
-
-
---
--- Data for Name: Roles; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public."Roles" (id, nombre_rol, descripcion) FROM stdin;
-\.
-
-
---
--- Data for Name: Usuario; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public."Usuario" (id, nombre, apellido, email, psw_hash, tel, rol_id, activo) FROM stdin;
-\.
+INSERT INTO public."Productos" (descripcion, disponibilidad, precio, id, categoria_id, nombre_producto) VALUES
+('un taco', false, 10.00, 9, NULL, 'taco dorado'),
+('un atole de fresa', true, 15.00, 10, NULL, 'atole');
 
 
 --
@@ -583,6 +523,3 @@ ALTER TABLE ONLY public."Pedidos"
 --
 -- PostgreSQL database dump complete
 --
-
-\unrestrict szX9C2CxgXIY6bKATbHvwxINd4zCKBOaMwuTParArdDTqLNlBgrt8YFFCsdzEui
-
